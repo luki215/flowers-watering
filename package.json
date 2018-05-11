@@ -1,0 +1,28 @@
+{
+  "name": "flowers-watering",
+  "version": "1.0.0",
+  "description": "My hobby project - create watering system for my flowers using Raspberry PI & Node JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luki215/flowers-watering.git"
+  },
+  "keywords": [
+    "raspberry",
+    "pi",
+    "flowers",
+    "watering"
+  ],
+  "author": "Lukáš Březina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luki215/flowers-watering/issues"
+  },
+  "homepage": "https://github.com/luki215/flowers-watering#readme",
+  "dependencies": {
+    "onoff": "^3.0.2"
+  }
+}
