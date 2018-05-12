@@ -6,13 +6,16 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var waterrRouter = require('./routes/waterr');
-var pumpsRouter = require('./routes/pumps');
+var pumpsSettingsRouter = require('./routes/pumps_settings');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+app.use('/stylesheets', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -22,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/waterr', waterrRouter);
-app.use('/pumps', pumpsRouter);
+app.use('/pumps-settings', pumpsSettingsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,7 +1,14 @@
 extends layout
 
 block content
-  h1 Instantní zalévání
-  p Welcome to 
-  button#waterr Waterrrrr
-  pre= JSON.stringify(pumps, null, 2)
+  .container-fluid: .row: .col
+      h1.text-center
+        i(class="fa fa-leaf")
+        |&nbsp;Instantní zalévání&nbsp;
+        i(class="fa fa-leaf")
+      .row         
+        each pump in pumps
+          .col  
+            button.waterr(pump-id= `${pump.id}`) 
+              i(class="fa fa-tint pump-ico") 
+              span(class="pump-name")= pump.name 

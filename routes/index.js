@@ -5,7 +5,7 @@ var db = require('../db/pumps')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', {pumps: db.get('pumps').value()});
+  res.render('index', {active_route: '/', pumps: db.get('pumps').value()});
 });
 
 module.exports = router;

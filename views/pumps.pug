@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  .container-fluid: .row: .col
+      h1.text-center
+        i(class="fa fa-leaf")
+        |&nbsp;Pumpyyyyyy&nbsp;
+        i(class="fa fa-leaf")
+      .row         
+        each pump in pumps
+          .col: .card
+            .card-header=pump.name
+            .card-body
+              h5.card-title Zalévat
+              form
+                select(class="form-control")
+                  option Každý den
+                  option Jednou týdně
+                .row
+                  .col: .form-group
+                    label(for='f_when') Kdy
+                    input.form-control(type="text", id="f_when", placeholder="hh:mm")
+                  .col: .form-group
+                    label(for='f_how_much') Kolik
+                    .input-group
+                      input.form-control(type="text", id="f_how_much")
+                      .input-group-append: .input-group-text sec
+                btn.btn.btn-success Uložit

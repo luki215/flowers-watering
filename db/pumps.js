@@ -9,7 +9,7 @@ db.defaults({ pumps: [
   {id: 0, name: "Zalivatko 1"},
   {id: 1, name: "Zalivatko 2"},
   {id: 2, name: "Zalivatko 3"},
-  {id: 3, name: "Zalivatko 4"}
+  {id: 3, name: "super květinka nej nej"}
 ]})
   .write()
 
