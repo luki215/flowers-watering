@@ -43,4 +43,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+var pumps_scheduler = require('./lib/pumps_scheduler');
+pumps_scheduler.init();
+
 module.exports = app;

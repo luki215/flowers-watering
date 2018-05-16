@@ -1,6 +1,7 @@
 extends layout
 
 block content
+  .alert.alert-success.hide Uspěšně uloženo
   .container-fluid: .row: .col
       h1.text-center
         i(class="fa fa-leaf")
@@ -8,21 +9,24 @@ block content
         i(class="fa fa-leaf")
       .row         
         each pump in pumps
-          .col: .card
+          .col: .card.pump-settings-card
             .card-header=pump.name
             .card-body
-              h5.card-title Zalévat
-              form
-                select(class="form-control")
-                  option Každý den
-                  option Jednou týdně
+              form.update-pump(action=`/pumps-settings/${pump.id}`, method="PATCH")
+                h5.card-title Zalévat &nbsp;
+                  .form-check.form-check-inline
+                    input(class="form-check-input position-static", type="checkbox", checked=(pump.on)? true: false)
+                
+                select(class="form-control", name="frequency")
+                  option(value="daily", selected=(pump.frequency == 'daily')? true: false ) Každý den
+                  option(value="weekly",selected=(pump.frequency == 'weekly')? true: false) Jednou týdně
                 .row
                   .col: .form-group
                     label(for='f_when') Kdy
-                    input.form-control(type="text", id="f_when", placeholder="hh:mm")
+                    input.form-control(type="text", id="f_when", placeholder="hh:mm", name="time", required='true', pattern="[0-9]{2}:[0-9]{2}", value=`${pump.hours}:${pump.minutes}`)
                   .col: .form-group
                     label(for='f_how_much') Kolik
                     .input-group
-                      input.form-control(type="text", id="f_how_much")
+                      input.form-control(type="number", id="f_how_much", name="duration", required='true', value=pump.duration)
                       .input-group-append: .input-group-text sec
-                btn.btn.btn-success Uložit
+                input.btn.btn-success(type="submit", value="Uložit")

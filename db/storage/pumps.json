@@ -6,15 +6,57 @@
     },
     {
       "id": 1,
-      "name": "Zalivatko  d fdsf dsfssd fsdf2"
+      "name": "Zalivatko 2"
     },
     {
       "id": 2,
-      "name": "Zalivatko 3 asd asd asd asd asd asd sda"
+      "name": "Zalivatko 3"
     },
     {
       "id": 3,
-      "name": "super květinka nej nejasdh kjasdh kj hdjkah sdkjhjl"
+      "name": "Zalivatko 4"
+    }
+  ],
+  "schedules": [
+    {
+      "pump_id": 0,
+      "hours": 20,
+      "minutes": 25,
+      "duration": 124,
+      "frequency": "daily",
+      "on": true,
+      "id": 0,
+      "name": "Zalivatko 1"
+    },
+    {
+      "pump_id": 1,
+      "hours": 22,
+      "minutes": 50,
+      "duration": 8,
+      "frequency": "weekly",
+      "on": true,
+      "id": 1,
+      "name": "Zalivatko 2"
+    },
+    {
+      "pump_id": 2,
+      "hours": 0,
+      "minutes": 0,
+      "duration": 0,
+      "frequency": "daily",
+      "on": false,
+      "id": 2,
+      "name": "Zalivatko 3"
+    },
+    {
+      "pump_id": 3,
+      "hours": 0,
+      "minutes": 0,
+      "duration": 0,
+      "frequency": "daily",
+      "on": false,
+      "id": 3,
+      "name": "Zalivatko 4"
     }
   ]
 }
